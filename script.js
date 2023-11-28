@@ -3,10 +3,25 @@ const jokeContainer = document.getElementById("joke");
 const btn = document.getElementById("btn");
 
 // API endpoint for fetching jokes
-const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+const url = "https://v2.jokeapi.dev/joke/Dark?type=single";
 
 // Function to fetch and display a joke
-let getJoke = () => {
+// function displayJoke() {
+    
+//     jokeContainer.classList.remove("fade");
+
+//     fetch(url)
+//         .then(function(response) {
+//             return response.json();
+//         })
+//         .then(function(data) {
+//             jokeContainer.textContent = `${data.joke}`;
+//             jokeContainer.classList.add("fade");
+//         });
+// }
+
+// better code -->
+let getJoke = function(){
 
     // Remove the "fade" class to make the text appear
     jokeContainer.classList.remove("fade");
@@ -24,4 +39,5 @@ let getJoke = () => {
     });
 }
 btn.addEventListener("click",getJoke);
+//initial joke display when page is first opened
 getJoke();
